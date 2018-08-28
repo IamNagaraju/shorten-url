@@ -20,7 +20,7 @@ const urlSchema = new Schema({
         }
     }
   },
-  tag:[String],
+  tags:[String],
   hashed_url:{
       type:String
   },

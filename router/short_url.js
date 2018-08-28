@@ -8,14 +8,16 @@ const { Url } = require('../models/short_url')
 const router = express.Router();
 
 
-
+// getting all the all the data
 router.get('/', (req, res) => {
     Url.find().then(url => {
         res.send(url)
     }).catch(err => res.send(err));
 })
 
-router.get('/urls/tags/:name',(req,res) => {
+
+//het
+router.get('/shorten_url/tags/:name',(req,res) => {
 
     Url.find({tag:req.params.name}).then(data => {
       let url =  data.map(data =>(data.original_url))
@@ -23,7 +25,7 @@ router.get('/urls/tags/:name',(req,res) => {
     }).catch(err => res.send(err))
 })
 
-router.get('/urls/tags',(req,res) => {
+router.get('/shorten_url/tags',(req,res) => {
   let splited =   req.query.names.split(',')
   console.log(splited);
     // Url.find({tag:req.query.names}).then(data)
