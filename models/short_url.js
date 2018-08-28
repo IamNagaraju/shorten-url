@@ -1,5 +1,4 @@
 const { mongoose } = require('../config/db');
-const timeZone = require('mongoose-timezone');
 const moment = require('moment')
 
 const sh = require('shorthash');
