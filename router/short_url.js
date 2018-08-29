@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
   }).catch(err => res.send(err));
 })
 
-router.get('/short_url/:hash', (req, res) => {
+router.get('/:hash', (req, res) => {
   let customizeUrl = req.params.hash;
   let clickInfo = {
     userIpaddress: req.ip,
@@ -33,7 +33,7 @@ router.get('/short_url/:hash', (req, res) => {
     }).catch(err => res.status(400).send(err))
 })
 
-router.get('/shorten_url/tags/:name', (req, res) => {
+router.get('/tags/:name', (req, res) => {
 
   Url.find({ tagss: req.params.name }).then(data => {
     let url = data.map(data => (data.original_url))
@@ -41,7 +41,7 @@ router.get('/shorten_url/tags/:name', (req, res) => {
   }).catch(err => res.send(err))
 })
 
-router.get('/shorten_url/tags', (req, res) => {
+router.get('/tags', (req, res) => {
   let splited = req.query.names.split(',')
   console.log(splited);
   // Url.find({tags:req.query.names}).then(data)

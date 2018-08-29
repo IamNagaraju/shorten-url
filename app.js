@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 
 app.use(morgan('short'));
 
-app.use('/url', urlRouter)
+app.use('/urls', urlRouter)
 
 
  
